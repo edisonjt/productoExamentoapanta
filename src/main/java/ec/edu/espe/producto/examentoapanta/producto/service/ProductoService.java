@@ -38,21 +38,18 @@ public class ProductoService {
       Producto productoAux = this.productoRepository.findByCodigo(producto.getCodigoUnico());
       if(productoAux.getCodigoUnico() != null){
         this.productoRepository.save(producto);
-
       }else{
         log.error("No se puede actualizar, el producto {}, no existe", producto);
       }
-
     }catch(Exception e){
       throw new RuntimeException("Error al actualizar el producto", e);
     }
   }
 
-
   public Producto obtenerPorCodigo(String codigoUnico) {
         log.info("Se va a obtener el producto por codigoUnico: {}", codigoUnico);
         Producto producto = this.obtenerPorCodigo(codigoUnico);
-        if ( producto.getExistencia()) {
+        if ( producto.getExistencia() != null) {
             log.debug("producto obtenido: {}", producto);
             return producto;
         } else {
