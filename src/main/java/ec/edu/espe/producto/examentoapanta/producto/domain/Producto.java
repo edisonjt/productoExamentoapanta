@@ -1,5 +1,6 @@
 package ec.edu.espe.producto.examentoapanta.producto.domain;
 
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import lombok.Getter;
@@ -16,6 +17,7 @@ import java.math.BigDecimal;
 
 public class Producto {
 
+  @Id
   @Field("codigoUnico")
   private String codigoUnico;
 
