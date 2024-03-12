@@ -7,8 +7,14 @@ plugins {
 group = 'ec.edu.espe.producto.examentoapanta'
 version = '0.0.1-SNAPSHOT'
 
+ext {
+  set('springCloudVersion', "2023.0.0")
+}
+
 java {
-	sourceCompatibility = '21'
+	  toolchain {
+      languageVersion = JavaLanguageVersion.of(21)
+    }
 }
 
 configurations {
